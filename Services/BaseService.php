@@ -6,7 +6,6 @@
  * Time: 下午3:22
  */
 namespace Services;
-use MobLib\Storage;
 
 class BaseService
 {
@@ -22,12 +21,6 @@ class BaseService
             self::$instance[$class] = new $class();
         }
         return self::$instance[$class];
-    }
-
-
-    protected function Storage()
-    {
-        return Storage::Instance();
     }
 
     protected function __construct() {}

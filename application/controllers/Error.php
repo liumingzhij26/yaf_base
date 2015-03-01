@@ -1,9 +1,11 @@
 <?php
 use Yaf\Registry;
+use Yaf\Controller_Abstract as Controller;
+use \Exception as E;
 
-class errorController extends Yaf\Controller_Abstract {
+class errorController extends Controller {
 
-    public function errorAction( \Exception $exception ) {
+    public function errorAction( E $exception ) {
         if( Registry::get('config')->environment != 'pro' ) {
             echo '<pre>';
             print_r($exception);
@@ -14,15 +16,10 @@ class errorController extends Yaf\Controller_Abstract {
             case YAF\ERR\NOTFOUND\CONTROLLER:
             case YAF\ERR\NOTFOUND\ACTION:
             case YAF\ERR\NOTFOUND\VIEW:
-            case 4041:
+            case 404:
                 header("Content-type: text/html; charset=utf-8");
                 header("status: 404 Not Found");
-                $this->display("4041");
-                break;
-            case 4042:
-                header("Content-type: text/html; charset=utf-8");
-                header("status: 404 Not Found");
-                $this->display("4042");
+                $this->display("404");
                 break;
             default :
                 header("Content-type: text/html; charset=utf-8");

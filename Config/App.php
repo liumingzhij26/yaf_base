@@ -17,13 +17,11 @@ class App {
     /**
      * @var string 开发环境
      */
-    public $environment = 'rd';
+    public $environment = 'dev';
 
-    public $platform = "wap";
+    public $platform = "pc";
 	
-    public $version = '1.0';
-
-    public $source = 'touch';
+    public $version = '1.1';
 
     public $cache = array(
         //缓存类型
@@ -33,7 +31,7 @@ class App {
         //缓存前缀
         "prefix" => "",
         //默认过期时间
-        "expire" => 300,
+        "expire" => 1000,
         //长度
         "length" => 0,
         //文件缓存子目录，为了防止单个目录下文件数过多,1为开启

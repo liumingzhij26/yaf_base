@@ -8,7 +8,7 @@
 class Bootstrap extends Yaf\Bootstrap_Abstract{
 
     /**
-     * 初始化 聚美 Vendor
+     * 初始化 Vendor
      * @param \Yaf\Dispatcher $dispatcher
      */
     public function _initVendor(Yaf\Dispatcher $dispatcher) {

@@ -1,16 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 14/11/27
- * Time: 下午2:26
- */
 namespace Services;
-use MobLib\Service as Ser;
-use MobLib\Cache;
+use Services\BaseService as Base;
+use Utils\Func;
 
-class Service extends Ser  {
+class TestService extends Base
+{
 
-    
+    /**
+     * @return TestService
+     */
+    static public function Instance(){
+        return parent::Instance();
+    }
+
+    public function getUrl() {
+        return Func::SeftUrl();
+    }
+
+    public function getUrl1() {
+        return Func::SeftUrl();
+    }
 
 }
