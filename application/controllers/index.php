@@ -21,6 +21,14 @@ class indexController extends Controller {
 
     public function testAction() {
         $test = Test::Instance();
+        echo $test->getUrl();
+        echo "<br/>";
+        echo preg_replace('/^http:\/\/yaf\.lmz\.com\/(.*)$/', 'http://yaf.lmz.com/index.php/$1', 'http://yaf.lmz.com/index/test');
     }
+
+    public function infoAction() {
+        phpinfo();
+    }
+
 
 }

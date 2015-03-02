@@ -28,7 +28,7 @@ server {
     location / {
         index index.php;
         if (!-f $request_filename) {
-            rewrite ^/(.*)$ /index.php?/$1 last;
+            rewrite ^/(.*)$ /index.php/$1 last;
             break;
         }
     }
@@ -39,5 +39,4 @@ server {
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
-
 }
