@@ -65,7 +65,6 @@ class Autoloader{
     public function loadByNamespace($name)
     {
         $classPath = str_replace('\\', DIRECTORY_SEPARATOR ,$name);
-
         foreach(static::$sysRoot as $k => $root)
         {
             $classFile = $root.$classPath.'.php';

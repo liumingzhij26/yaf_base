@@ -11,7 +11,8 @@
  * Time: 下午6:54
  */
 namespace Config;
-class App {
+class App
+{
 
 
     /**
@@ -20,7 +21,7 @@ class App {
     public $environment = 'dev';
 
     public $platform = "pc";
-	
+
     public $version = '1.1';
 
     public $cache = array(
@@ -39,4 +40,5 @@ class App {
         //子目录缓存级别
         "temp_level" => 1
     );
+
 }

@@ -7,12 +7,17 @@
  */
 namespace Services;
 
+use Yaf\Registry;
+use \lmz\medoo\medoo;
+
 class BaseService
 {
 
     static protected $instance;
 
     static protected $cache;
+
+    static protected $db;
 
     static public function Instance()
     {
@@ -23,11 +28,34 @@ class BaseService
         return self::$instance[$class];
     }
 
-    protected function __construct() {}
+    /**
+     * 数据库连接
+     *
+     * @param $dbName
+     * @return \lmz\medoo\medoo
+     * @throws \Exception
+     */
+    static public function InstanceDb($dbName)
+    {
+        if (empty($dbName) && !is_string($dbName)) {
+            throw new \Exception('error database name : ' . $dbName);
+        }
+        if (empty(self::$instance[$dbName])) {
+            self::$instance[$dbName] = new medoo($dbName);
+        }
+        return self::$instance[$dbName];
+    }
 
-    protected function __clone(){}
+    protected function __construct()
+    {
+    }
 
-    public function __call($name, $arg) {}
+    protected function __clone()
+    {
+    }
 
+    public function __call($name, $arg)
+    {
+    }
 
 }

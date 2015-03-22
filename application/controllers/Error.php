@@ -3,9 +3,9 @@ use Yaf\Registry;
 use Yaf\Controller_Abstract as Controller;
 use \Exception as E;
 
-class errorController extends Controller {
+class ErrorController extends Controller {
 
-    public function errorAction( E $exception ) {
+    public function errorAction(E $exception ) {
         if( Registry::get('config')->environment != 'pro' ) {
             echo '<pre>';
             print_r($exception);

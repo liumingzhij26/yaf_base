@@ -7,10 +7,8 @@
  */
 use Yaf\Dispatcher;
 use Yaf\Controller_Abstract;
-use Cache\cache;
-use Services\PageService;
 
-class pagesController extends Controller_Abstract {
+class PagesController extends Controller_Abstract {
 
     /**
      * 初始化控制器
